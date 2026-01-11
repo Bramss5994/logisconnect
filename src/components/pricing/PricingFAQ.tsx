@@ -12,9 +12,9 @@ const faqItems = [
       "Chaque quartier correspond à un périmètre opérationnel défini (ensemble de bâtiments, résidences ou zones géographiques). La facturation est mensuelle et basée sur le pack choisi. Vous pouvez ajouter ou retirer des quartiers à tout moment, avec une facturation ajustée au prorata.",
   },
   {
-    question: "Quels agents IA sont inclus dans chaque pack ?",
+    question: "Quelles fonctionnalités d'automatisation sont incluses ?",
     answer:
-      "Le pack Essentiel inclut 1 agent IA dédié à la qualification. Le pack Premium comprend 3 agents (Qualification, Prestataire, Suivi). Le pack Excellence offre 8 agents pour une automatisation complète : Accueil, Qualification, Prestataire, Suivi, Reporting, Documents, Support Interne et Téléphonie IA.",
+      "Le pack Essentiel inclut l'automatisation de base (qualification, suivi). Le pack Premium ajoute le reporting avancé et la génération de documents. Le pack Excellence offre une automatisation complète incluant la téléphonie automatisée et l'audit mensuel.",
   },
   {
     question: "Peut-on intégrer nos prestataires existants ?",
