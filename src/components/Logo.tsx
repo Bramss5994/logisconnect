@@ -21,11 +21,13 @@ const Logo = ({ showSlogan = false, size = "md", variant = "full" }: LogoProps) 
 
   return (
     <div className="flex items-center gap-3">
-      <img 
-        src={logoIcon} 
-        alt="LogisConnect" 
-        className={`${sizeClasses[size]} w-auto`}
-      />
+      <div className="bg-transparent p-1.5 rounded-lg">
+        <img 
+          src={logoIcon} 
+          alt="LogisConnect" 
+          className={`${sizeClasses[size]} w-auto`}
+        />
+      </div>
       {variant === "full" && (
         <div className="flex flex-col">
           <span className={`font-display font-bold text-primary ${textSizes[size]}`}>
