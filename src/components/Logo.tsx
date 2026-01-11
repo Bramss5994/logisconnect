@@ -1,4 +1,4 @@
-import logoIcon from "@/assets/logo-icon.png";
+import { Building2 } from "lucide-react";
 
 interface LogoProps {
   showSlogan?: boolean;
@@ -7,10 +7,16 @@ interface LogoProps {
 }
 
 const Logo = ({ showSlogan = false, size = "md", variant = "full" }: LogoProps) => {
-  const sizeClasses = {
-    sm: "h-8",
-    md: "h-10",
-    lg: "h-14",
+  const iconSizes = {
+    sm: "h-6 w-6",
+    md: "h-8 w-8",
+    lg: "h-10 w-10",
+  };
+
+  const containerSizes = {
+    sm: "h-8 w-8",
+    md: "h-10 w-10",
+    lg: "h-12 w-12",
   };
 
   const textSizes = {
@@ -21,12 +27,8 @@ const Logo = ({ showSlogan = false, size = "md", variant = "full" }: LogoProps) 
 
   return (
     <div className="flex items-center gap-3">
-      <div className="bg-transparent p-1.5 rounded-lg">
-        <img 
-          src={logoIcon} 
-          alt="LogisConnect" 
-          className={`${sizeClasses[size]} w-auto`}
-        />
+      <div className={`${containerSizes[size]} rounded-xl bg-primary flex items-center justify-center`}>
+        <Building2 className={`${iconSizes[size]} text-primary-foreground`} />
       </div>
       {variant === "full" && (
         <div className="flex flex-col">
