@@ -6,26 +6,22 @@ const benefits = [
   {
     icon: Clock,
     title: "Gain de temps",
-    value: "-60%",
-    description: "Réduction du temps de traitement des demandes grâce à l'automatisation.",
+    description: "Automatisation du traitement des demandes pour libérer du temps à vos équipes.",
   },
   {
     icon: Heart,
     title: "Satisfaction locataires",
-    value: "+40%",
-    description: "Amélioration de la satisfaction grâce à une communication proactive.",
+    description: "Communication proactive et suivi transparent pour des locataires satisfaits.",
   },
   {
     icon: PiggyBank,
-    title: "Économies",
-    value: "-30%",
-    description: "Réduction des coûts de gestion et optimisation des interventions.",
+    title: "Optimisation des coûts",
+    description: "Réduction des coûts de gestion grâce à l'automatisation des processus.",
   },
   {
     icon: TrendingUp,
-    title: "Productivité",
-    value: "x2",
-    description: "Doublement de la capacité de traitement de votre équipe.",
+    title: "Productivité accrue",
+    description: "Augmentation de la capacité de traitement de votre équipe.",
   },
 ];
 
@@ -56,10 +52,10 @@ const BenefitsSection = () => {
               <div className="inline-flex w-16 h-16 rounded-2xl bg-white/10 items-center justify-center mb-6">
                 <benefit.icon className="h-8 w-8" />
               </div>
-              <div className="text-4xl md:text-5xl font-display font-bold mb-2">
-                {benefit.value}
-              </div>
               <div className="text-lg font-semibold mb-2">{benefit.title}</div>
+              <p className="text-sm text-primary-foreground/70">
+                {benefit.description}
+              </p>
               <p className="text-sm text-primary-foreground/70">
                 {benefit.description}
               </p>

@@ -23,8 +23,8 @@ const features = [
   },
   {
     icon: Zap,
-    title: "IA Agentova",
-    description: "Agents intelligents pour qualifier, prioriser et router automatiquement les demandes.",
+    title: "Automatisation intelligente",
+    description: "Qualification, priorisation et routage automatique des demandes.",
   },
   {
     icon: Wrench,

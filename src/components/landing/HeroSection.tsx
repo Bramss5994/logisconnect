@@ -45,20 +45,11 @@ const HeroSection = () => {
               </Button>
             </div>
 
-            {/* Trust badges */}
-            <div className="flex items-center gap-8 pt-8 border-t border-border">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary font-display">98%</div>
-                <div className="text-sm text-muted-foreground">Satisfaction</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary font-display">-60%</div>
-                <div className="text-sm text-muted-foreground">Délai de traitement</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary font-display">150+</div>
-                <div className="text-sm text-muted-foreground">Bailleurs</div>
-              </div>
+            {/* Trust message */}
+            <div className="pt-8 border-t border-border">
+              <p className="text-muted-foreground">
+                Rejoignez les bailleurs sociaux qui modernisent leur gestion locative avec LogisConnect.
+              </p>
             </div>
           </div>
 
