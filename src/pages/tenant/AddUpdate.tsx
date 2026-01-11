@@ -7,6 +7,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { ArrowLeft, Building2, Upload, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import type { Tables } from "@/integrations/supabase/types";
+
+type Demande = Tables<"demandes">;
 
 const AddUpdate = () => {
   const { bailleurSlug, trackingId } = useParams<{ bailleurSlug: string; trackingId: string }>();
@@ -33,23 +36,22 @@ const AddUpdate = () => {
   const { data: demande } = useQuery({
     queryKey: ["demande", trackingId],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("demandes")
-        .select("*")
-        .eq("tracking_id", trackingId)
-        .single();
+      // Use the secure RPC function
+      const { data, error } = await (supabase as any)
+        .rpc("get_demande_by_tracking", { p_tracking_id: trackingId });
       
       if (error) throw error;
-      return data;
+      if (!data || data.length === 0) throw new Error("Not found");
+      return data[0] as Demande;
     },
   });
 
   const addUpdate = useMutation({
     mutationFn: async () => {
-      if (!demande) throw new Error("Demande not found");
+      if (!trackingId) throw new Error("Tracking ID not found");
       
       setIsUploading(true);
-      let mediaUrl = null;
+      let mediaUrl: string | null = null;
 
       // Upload file if any
       if (file) {
@@ -68,33 +70,14 @@ const AddUpdate = () => {
         }
       }
 
-      // Create the update
-      const { error: updateError } = await supabase
-        .from("demande_updates")
-        .insert({
-          demande_id: demande.id,
-          message,
-          media_url: mediaUrl,
-        });
+      // Use the secure RPC function to add update
+      const { error } = await (supabase as any).rpc("add_demande_update", {
+        p_tracking_id: trackingId,
+        p_message: message,
+        p_media_url: mediaUrl
+      });
 
-      if (updateError) throw updateError;
-
-      // Update the demande historique
-      const newHistorique = [
-        ...(demande.historique as Array<{ date: string; action: string; details?: string }> || []),
-        {
-          date: new Date().toISOString(),
-          action: "Précision ajoutée",
-          details: message,
-        },
-      ];
-
-      const { error: historyError } = await supabase
-        .from("demandes")
-        .update({ historique: newHistorique })
-        .eq("id", demande.id);
-
-      if (historyError) throw historyError;
+      if (error) throw error;
 
       setIsUploading(false);
     },
