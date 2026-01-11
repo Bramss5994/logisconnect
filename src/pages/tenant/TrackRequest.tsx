@@ -9,6 +9,9 @@ import { ArrowLeft, Search, Building2, Clock, CheckCircle2, Wrench, UserCheck, A
 import { supabase } from "@/integrations/supabase/client";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
+import type { Tables } from "@/integrations/supabase/types";
+
+type Demande = Tables<"demandes">;
 
 const statusConfig = {
   new: { label: "En attente", color: "bg-yellow-500", icon: Clock },
@@ -40,14 +43,13 @@ const TrackRequest = () => {
   const { data: demande, isLoading, isError } = useQuery({
     queryKey: ["demande", trackingId],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("demandes")
-        .select("*")
-        .eq("tracking_id", trackingId.toUpperCase())
-        .single();
+      // Use the secure RPC function
+      const { data, error } = await (supabase as any)
+        .rpc("get_demande_by_tracking", { p_tracking_id: trackingId.toUpperCase() });
       
       if (error) throw error;
-      return data;
+      if (!data || data.length === 0) throw new Error("Not found");
+      return data[0] as Demande;
     },
     enabled: searchTriggered && trackingId.length > 0,
   });
