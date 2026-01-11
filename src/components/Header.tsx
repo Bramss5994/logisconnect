@@ -13,6 +13,7 @@ const Header = () => {
     { label: "Accueil", href: "/" },
     { label: "Fonctionnalités", href: "/#features" },
     { label: "Comment ça marche", href: "/#how-it-works" },
+    { label: "Tarifs", href: "/pricing" },
     { label: "Contact", href: "/#contact" },
   ];
 
