@@ -229,67 +229,9 @@ const TenantPortal = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
-                  {/* Timeline */}
-                  <div className="border rounded-lg p-4">
-                    <div className="flex items-center justify-between mb-4">
-                      <div>
-                        <span className="text-sm font-mono text-muted-foreground">
-                          DEM-2024-0147
-                        </span>
-                        <h4 className="font-medium">Fuite d'eau cuisine</h4>
-                      </div>
-                      <span className="px-3 py-1 bg-info/10 text-info text-sm font-medium rounded-full">
-                        En cours
-                      </span>
-                    </div>
-
-                    {/* Timeline steps */}
-                    <div className="relative pl-6 border-l-2 border-border space-y-4">
-                      <div className="relative">
-                        <div className="absolute -left-[25px] w-4 h-4 rounded-full bg-success border-2 border-background" />
-                        <div className="text-sm">
-                          <div className="font-medium text-foreground">
-                            Demande créée
-                          </div>
-                          <div className="text-muted-foreground">
-                            15 janvier 2024 à 10:30
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative">
-                        <div className="absolute -left-[25px] w-4 h-4 rounded-full bg-success border-2 border-background" />
-                        <div className="text-sm">
-                          <div className="font-medium text-foreground">
-                            Demande qualifiée
-                          </div>
-                          <div className="text-muted-foreground">
-                            15 janvier 2024 à 10:32
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative">
-                        <div className="absolute -left-[25px] w-4 h-4 rounded-full bg-info border-2 border-background animate-pulse" />
-                        <div className="text-sm">
-                          <div className="font-medium text-foreground">
-                            Prestataire assigné : Plomberie Express
-                          </div>
-                          <div className="text-muted-foreground">
-                            15 janvier 2024 à 11:00
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative">
-                        <div className="absolute -left-[25px] w-4 h-4 rounded-full bg-muted border-2 border-background" />
-                        <div className="text-sm">
-                          <div className="font-medium text-muted-foreground">
-                            Intervention prévue
-                          </div>
-                          <div className="text-muted-foreground">En attente</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="text-center py-8 text-muted-foreground">
+                  <p>Aucune demande en cours</p>
+                  <p className="text-sm mt-1">Vos demandes apparaîtront ici une fois créées</p>
                 </div>
               </CardContent>
             </Card>
