@@ -11,6 +11,13 @@ import DashboardPage from "./pages/dashboard/DashboardPage";
 import RequestsPage from "./pages/dashboard/RequestsPage";
 import NotFound from "./pages/NotFound";
 
+// Tenant Portal Pages
+import TenantHome from "./pages/tenant/TenantHome";
+import DeclareProblem from "./pages/tenant/DeclareProblem";
+import TrackRequest from "./pages/tenant/TrackRequest";
+import Confirmation from "./pages/tenant/Confirmation";
+import AddUpdate from "./pages/tenant/AddUpdate";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -23,6 +30,13 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/locataire" element={<TenantPortal />} />
           <Route path="/pricing" element={<PricingPage />} />
+          
+          {/* Dynamic Tenant Portal routes */}
+          <Route path="/locataire/:bailleurSlug" element={<TenantHome />} />
+          <Route path="/locataire/:bailleurSlug/declarer" element={<DeclareProblem />} />
+          <Route path="/locataire/:bailleurSlug/suivi" element={<TrackRequest />} />
+          <Route path="/locataire/:bailleurSlug/confirmation/:trackingId" element={<Confirmation />} />
+          <Route path="/locataire/:bailleurSlug/update/:trackingId" element={<AddUpdate />} />
           
           {/* Dashboard routes */}
           <Route path="/dashboard" element={<DashboardLayout />}>
