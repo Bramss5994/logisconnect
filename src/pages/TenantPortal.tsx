@@ -70,7 +70,7 @@ const TenantPortal = () => {
                       <Bot className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <CardTitle className="text-lg">Assistant IA</CardTitle>
+                      <CardTitle className="text-lg">Assistant LogisConnect</CardTitle>
                       <CardDescription>
                         Décrivez votre problème, je vous guide
                       </CardDescription>
@@ -261,7 +261,7 @@ const TenantPortal = () => {
                         <div className="absolute -left-[25px] w-4 h-4 rounded-full bg-success border-2 border-background" />
                         <div className="text-sm">
                           <div className="font-medium text-foreground">
-                            Qualifiée par l'IA
+                            Demande qualifiée
                           </div>
                           <div className="text-muted-foreground">
                             15 janvier 2024 à 10:32
