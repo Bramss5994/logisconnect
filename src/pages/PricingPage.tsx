@@ -3,7 +3,9 @@ import Footer from "@/components/Footer";
 import PricingCard from "@/components/pricing/PricingCard";
 import PilotOfferCard from "@/components/pricing/PilotOfferCard";
 import PricingFAQ from "@/components/pricing/PricingFAQ";
-import { Building2, HelpCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Building2, HelpCircle, Download } from "lucide-react";
+import generateCommercialPDF from "@/utils/generateCommercialPDF";
 
 const pricingPlans = [
   {
@@ -100,6 +102,31 @@ const PricingPage = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <PilotOfferCard />
+            </div>
+          </div>
+        </section>
+
+        {/* PDF Download Section */}
+        <section className="py-12 lg:py-16 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto text-center">
+              <Download className="h-12 w-12 text-primary mx-auto mb-4" />
+              <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
+                Téléchargez notre plaquette commerciale
+              </h2>
+              <p className="text-muted-foreground mb-6">
+                Un document complet avec notre vision, nos fonctionnalités, le ROI estimé, 
+                les tarifs et toutes les informations sur la sécurité et le déploiement.
+              </p>
+              <Button 
+                variant="hero" 
+                size="lg" 
+                onClick={generateCommercialPDF}
+                className="gap-2"
+              >
+                <Download className="h-5 w-5" />
+                Télécharger le PDF
+              </Button>
             </div>
           </div>
         </section>

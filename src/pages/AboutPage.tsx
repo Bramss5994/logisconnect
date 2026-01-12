@@ -13,8 +13,10 @@ import {
   ArrowRight,
   CheckCircle2,
   Building2,
-  MapPin
+  MapPin,
+  Download
 } from "lucide-react";
+import generateCommercialPDF from "@/utils/generateCommercialPDF";
 
 const values = [
   {
@@ -238,6 +240,29 @@ const AboutPage = () => {
                   <div className="text-muted-foreground">Made in France</div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* PDF Download */}
+        <section className="py-12 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto text-center">
+              <h3 className="text-xl font-semibold text-foreground mb-4">
+                Téléchargez notre plaquette commerciale
+              </h3>
+              <p className="text-muted-foreground mb-6">
+                Un document complet pour présenter LogisConnect à votre direction.
+              </p>
+              <Button 
+                variant="hero" 
+                size="lg" 
+                onClick={generateCommercialPDF}
+                className="gap-2"
+              >
+                <Download className="h-5 w-5" />
+                Télécharger le PDF
+              </Button>
             </div>
           </div>
         </section>
