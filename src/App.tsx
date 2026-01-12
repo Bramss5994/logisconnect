@@ -6,6 +6,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import TenantPortal from "./pages/TenantPortal";
 import PricingPage from "./pages/PricingPage";
+import BailleursSociauxPage from "./pages/BailleursSociauxPage";
+import SecurityPage from "./pages/SecurityPage";
+import ArchitecturePage from "./pages/ArchitecturePage";
+import ROIPage from "./pages/ROIPage";
+import IntegrationsPage from "./pages/IntegrationsPage";
+import AboutPage from "./pages/AboutPage";
+import DemoPage from "./pages/DemoPage";
 import DashboardLayout from "./components/layouts/DashboardLayout";
 import DashboardPage from "./pages/dashboard/DashboardPage";
 import RequestsPage from "./pages/dashboard/RequestsPage";
@@ -30,6 +37,13 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/locataire" element={<TenantPortal />} />
           <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/bailleurs-sociaux" element={<BailleursSociauxPage />} />
+          <Route path="/securite" element={<SecurityPage />} />
+          <Route path="/architecture" element={<ArchitecturePage />} />
+          <Route path="/roi" element={<ROIPage />} />
+          <Route path="/integrations" element={<IntegrationsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/demo" element={<DemoPage />} />
           
           {/* Dynamic Tenant Portal routes */}
           <Route path="/locataire/:bailleurSlug" element={<TenantHome />} />
