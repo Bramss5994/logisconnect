@@ -10,11 +10,11 @@ const Header = () => {
   const location = useLocation();
 
   const navItems = [
-    { label: "Accueil", href: "/" },
+    { label: "Bailleurs Sociaux", href: "/bailleurs-sociaux" },
     { label: "Fonctionnalités", href: "/#features" },
-    { label: "Comment ça marche", href: "/#how-it-works" },
+    { label: "ROI & Impact", href: "/roi" },
+    { label: "Sécurité", href: "/securite" },
     { label: "Tarifs", href: "/pricing" },
-    { label: "Contact", href: "/#contact" },
   ];
 
   const isActive = (href: string) => location.pathname === href;

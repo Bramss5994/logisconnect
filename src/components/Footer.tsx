@@ -6,27 +6,27 @@ const Footer = () => {
 
   const links = {
     product: [
-      { label: "Fonctionnalités", href: "/#features" },
-      { label: "Comment ça marche", href: "/#how-it-works" },
+      { label: "Bailleurs Sociaux", href: "/bailleurs-sociaux" },
       { label: "Tarifs", href: "/pricing" },
+      { label: "ROI & Impact", href: "/roi" },
       { label: "Intégrations", href: "/integrations" },
     ],
     company: [
       { label: "À propos", href: "/about" },
-      { label: "Blog", href: "/blog" },
-      { label: "Carrières", href: "/careers" },
-      { label: "Presse", href: "/press" },
+      { label: "Sécurité & RGPD", href: "/securite" },
+      { label: "Architecture", href: "/architecture" },
+      { label: "Démonstration", href: "/demo" },
     ],
     resources: [
-      { label: "Documentation", href: "/docs" },
-      { label: "Guides", href: "/guides" },
-      { label: "Support", href: "/support" },
-      { label: "API", href: "/api" },
+      { label: "Comment ça marche", href: "/#how-it-works" },
+      { label: "Fonctionnalités", href: "/#features" },
+      { label: "Support", href: "/demo" },
+      { label: "Contact", href: "/demo" },
     ],
     legal: [
-      { label: "Confidentialité", href: "/privacy" },
-      { label: "CGU", href: "/terms" },
-      { label: "Mentions légales", href: "/legal" },
+      { label: "Confidentialité", href: "/securite" },
+      { label: "CGU", href: "/securite" },
+      { label: "Mentions légales", href: "/securite" },
     ],
   };
 
