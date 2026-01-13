@@ -13,7 +13,7 @@ const Header = () => {
     { label: "Bailleurs Sociaux", href: "/bailleurs-sociaux" },
     { label: "Fonctionnalités", href: "/#features" },
     { label: "ROI & Impact", href: "/roi" },
-    { label: "Sécurité", href: "/securite" },
+    { label: "Vidéo", href: "/video" },
     { label: "Tarifs", href: "/pricing" },
   ];
 
