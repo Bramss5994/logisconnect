@@ -147,12 +147,45 @@ export type Database = {
           },
         ]
       }
+      user_bailleurs: {
+        Row: {
+          bailleur_id: string
+          created_at: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          bailleur_id: string
+          created_at?: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          bailleur_id?: string
+          created_at?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_bailleurs_bailleur_id_fkey"
+            columns: ["bailleur_id"]
+            isOneToOne: false
+            referencedRelation: "bailleurs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_user_bailleur_ids: { Args: { p_user_id: string }; Returns: string[] }
+      user_belongs_to_bailleur: {
+        Args: { p_bailleur_id: string; p_user_id: string }
+        Returns: boolean
+      }
     }
     Enums: {
       problem_type:
