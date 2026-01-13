@@ -39,9 +39,11 @@ const HeroSection = () => {
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
-              <Button variant="outline" size="xl" className="gap-2">
-                <Play className="h-5 w-5" />
-                Voir la vidéo
+              <Button variant="outline" size="xl" className="gap-2" asChild>
+                <Link to="/video">
+                  <Play className="h-5 w-5" />
+                  Voir la vidéo
+                </Link>
               </Button>
             </div>
 
