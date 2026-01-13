@@ -181,6 +181,34 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      add_demande_update: {
+        Args: { p_media_url?: string; p_message: string; p_tracking_id: string }
+        Returns: boolean
+      }
+      get_demande_by_tracking: {
+        Args: { p_tracking_id: string }
+        Returns: {
+          adresse: string
+          bailleur_id: string
+          categorie_ia: string
+          created_at: string
+          description: string
+          email: string
+          historique: Json[]
+          id: string
+          logement: string
+          media_urls: string[]
+          nom: string
+          prenom: string
+          statut: string
+          suggestions_ia: string[]
+          telephone: string
+          tracking_id: string
+          type_probleme: string
+          updated_at: string
+          urgence: string
+        }[]
+      }
       get_user_bailleur_ids: { Args: { p_user_id: string }; Returns: string[] }
       user_belongs_to_bailleur: {
         Args: { p_bailleur_id: string; p_user_id: string }
