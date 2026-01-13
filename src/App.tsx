@@ -13,6 +13,7 @@ import ROIPage from "./pages/ROIPage";
 import IntegrationsPage from "./pages/IntegrationsPage";
 import AboutPage from "./pages/AboutPage";
 import DemoPage from "./pages/DemoPage";
+import VideoPage from "./pages/VideoPage";
 import DashboardLayout from "./components/layouts/DashboardLayout";
 import DashboardPage from "./pages/dashboard/DashboardPage";
 import RequestsPage from "./pages/dashboard/RequestsPage";
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="/integrations" element={<IntegrationsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/demo" element={<DemoPage />} />
+          <Route path="/video" element={<VideoPage />} />
           
           {/* Dynamic Tenant Portal routes */}
           <Route path="/locataire/:bailleurSlug" element={<TenantHome />} />
